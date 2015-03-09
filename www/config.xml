@@ -6,10 +6,10 @@
         id        = "fr.agoralogie.multicollectenvironnementpremium"
         version   = "0.3.0">
 
-    <name>MulticollectNature</name>
+    <name>TocToc-demo</name>
 
     <description>
-        MulticollectNature
+        TocToc-demonstration
     </description>
 
     <author href="http://www.agoralogie.fr" email="philippe.laroche@agoralogie.fr">
@@ -53,6 +53,7 @@
    -->
     <gap:plugin name="com.millerjames01.sqlite-plugin" version="1.0.1" />
     <!-- use phonegap plugin add https://github.com/brodysoft/Cordova-SQLitePlugin  -->
+    <gap:plugin name="com.jcjee.plugins.emailcomposer" version="1.4.6" />
     
     <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
     <gap:plugin name="org.apache.cordova.file" />
