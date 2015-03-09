@@ -1,0 +1,31 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Partager par email</h1>
+		<button class="button button-icon icon ion-close" ng-click="closeshare()"></button>
+	</ion-header-bar>
+	<ion-content padding="true">
+		<ul class="list">
+			<li class="item item-divider">Choisissez les questions à inclure</li>
+          	<li class="item item-checkbox" ng-repeat="question in questions" type="item-text-wrap">
+				<label class="checkbox">
+					<input type="checkbox">
+				</label>
+				{{question.label}}
+			</li>
+			<li class="item item-divider">Periode</li>
+			<li class="padding">
+				<div class="button-bar">
+					<a class="button">6 mois</a>
+					<a class="button">3 mois</a>
+					<a class="button">1 mois</a>
+				</div>
+			</li>
+		</ul>
+		<div class="padding">
+			<button class="button button-block button-positive">
+				Continuer
+			</button>
+		</div>
+		
+	</ion-content>
+</ion-modal-view>
