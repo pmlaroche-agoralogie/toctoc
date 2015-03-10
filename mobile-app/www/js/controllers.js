@@ -27,7 +27,7 @@ angular.module('starter.controllers', [])
 			d = d.add(1, 'days');
 		}
 	} else if (period == '2-month') {
-		var _in = moment(curs).startOf('month').subtract('months',1);
+		var _in = moment(curs).startOf('month').subtract(1, 'months');
 		var _out = moment(curs).endOf('month');
 		var d = moment(_in);
 		while(d.unix() < _out.unix()) {
@@ -36,7 +36,7 @@ angular.module('starter.controllers', [])
 			d = d.add(1, 'days');
 		}
 	} else if (period == '3-month') {
-		var _in = moment(curs).startOf('month').subtract('months',2);
+		var _in = moment(curs).startOf('month').subtract(2, 'months');
 		var _out = moment(curs).endOf('month');
 		var d = moment(_in);
 		while(d.unix() < _out.unix()) {
@@ -114,7 +114,7 @@ angular.module('starter.controllers', [])
 					console.log("download complete: " + entry.fullPath);
 					$scope.modal.hide();
 					cordova.plugins.email.open({
-						attachments: "cdvfile://localhost/persistent/mypdf.pdf"
+						attachments: entry.fullPath
 					});
 				},
 				function(error) {
