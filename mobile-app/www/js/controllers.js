@@ -102,6 +102,34 @@ angular.module('starter.controllers', [])
 		$scope.closeshare = function() {
 			$scope.modal.hide();
 		};
+		$scope.continue = function() {
+			var fileTransfer = new FileTransfer();
+			var uri = encodeURI("http://wiw.io/ICM/mypdf.pdf");
+			var filePath = "cdvfile://localhost/persistent/mypdf.pdf";
+			
+			fileTransfer.download(
+				uri,
+				filePath,
+				function(entry) {
+					console.log("download complete: " + entry.fullPath);
+					$scope.modal.hide();
+					cordova.plugins.email.open({
+						attachments: "cdvfile://localhost/persistent/mypdf.pdf"
+					});
+				},
+				function(error) {
+					console.log("download error source " + error.source);
+					console.log("download error target " + error.target);
+					console.log("upload error code" + error.code);
+				},
+				false,
+				{
+					headers: {
+					}
+				}
+			);
+			
+		};
 	});
 })
 
